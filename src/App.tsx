@@ -5,7 +5,7 @@ import Header from "./components/Header";
 import Items from "./components/Items";
 
 class App extends React.Component {
-  constructor (props) {
+  /* constructor (props) {
     super(props) 
    this.state = {
       items:[
@@ -19,15 +19,15 @@ class App extends React.Component {
           isFavorite: false
           },  
       ]
-    }
+    } */
   render() {
     return (
       <>
         <Profile />
-        <Items items = {this.state}/>
+
         <Header />
       </>
-    )
+    );
   }
-}}
+}
 export default App;
