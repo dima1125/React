@@ -14,6 +14,7 @@ const Product = () => {
       <strong>{product.name}</strong>
       <img src={product.imageUrl} alt="" />
       <div>{product.price}</div>
+      <div>{product.discount}</div>
       <div>{product.rating}</div>
       <div>
         {product.isFavorite ? "удалить из избранного" : "добавить в избранное"}
