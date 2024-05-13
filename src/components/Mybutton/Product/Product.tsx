@@ -1,3 +1,5 @@
+import classes from "./Product.module.scss";
+
 const Product = () => {
   const product = {
     id: 1,
@@ -11,8 +13,10 @@ const Product = () => {
   };
   return (
     <div>
+      <div className={classes.img}>
+        <img src={product.imageUrl} alt="" />
+      </div>
       <strong>{product.name}</strong>
-      <img src={product.imageUrl} alt="" />
       <div>{product.price}</div>
       <div>{product.discount}</div>
       <div>{product.rating}</div>
