@@ -1,10 +1,10 @@
-function AllertButton({ massage, children }) {
+function MyButton({ massage, children }) {
   return <button onClick={() => alert(massage)}>{children}</button>;
 }
 export default function MyButton() {
   return (
     <>
-      <AllertButton massage="кнопка нажата">Кнопка</AllertButton>
+      <MyButton massage="кнопка нажата">Кнопка</MyButton>
     </>
   );
 }
