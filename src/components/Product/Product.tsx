@@ -35,7 +35,7 @@ const Product: FC<ProductProps> = ({
         </button>
       </div>
       <button onClick={handleClick}>Купить</button>
-      <ChangeCount />
+      <ChangeCount count={count} onDecrement={} onIncrement={}/>
     </div>
   );
 };
