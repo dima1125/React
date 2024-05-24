@@ -1,18 +1,22 @@
 import classes from "./Product.module.scss";
-import { FC } from "react";
+import { FC, useState } from "react";
 import { IProduct } from "../../types/products.ts";
 
 interface ProductProps {
-  product: IProduct;
-  onAddCart: () => void;
+  product: ProductItem;
+  onAddCart?: () => void;
   onToggleFavorite: () => void;
 }
 
 const Product: FC<ProductProps> = ({
   product,
-  onAddCart,
   onToggleFavorite,
-}) => {
+}) => { 
+  const [count, setCount] = useState (initialState: 0)
+  const discount = product.discount && product.discount.value</div>
+  const handleClick = () => {
+    setCount (value: count + 1)
+  }
   return (
     <div>
       <div className={classes.img}>
@@ -29,7 +33,8 @@ const Product: FC<ProductProps> = ({
             : "Добавить в избранное"}
         </button>
       </div>
-      <button onClick={onAddCart}>Купить</button>
+      <button onClick={handleClick}>Купить</button>
+      {count}
     </div>
   );
 };
