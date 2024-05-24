@@ -1,6 +1,7 @@
 import classes from "./Product.module.scss";
 import { FC, useState } from "react";
-import { IProduct } from "../../types/products.ts";
+import { ProductItem } from "../../types/products.ts";
+import ChangeCount from "../ChangeCount/ChangeCount.tsx";
 
 interface ProductProps {
   product: ProductItem;
@@ -34,7 +35,7 @@ const Product: FC<ProductProps> = ({
         </button>
       </div>
       <button onClick={handleClick}>Купить</button>
-      {count}
+      <ChangeCount />
     </div>
   );
 };
