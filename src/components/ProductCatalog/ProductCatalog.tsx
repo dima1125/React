@@ -1,25 +1,27 @@
 import { FC } from "react";
-import { IProduct } from "../../types/products.ts";
-import Product from "../Product/Product.tsx";
-import Row from "../Row/Row.tsx";
+import { Updater } from "use-immer";
+import { ProductItem, CartType } from "@/types";
+import { Product, Row } from "@/components";
 
 interface ProductCatalogProps {
-  products: IProduct[];
+  products: ProductItem[];
+  updateCart: Updater<CartType>;
 }
 
-const ProductCatalog: FC<ProductCatalogProps> = ({ products }) => {
-  const handleAddCart = () => {
-    alert("Добавлено в корзину");
-  };
+const ProductCatalog: FC<ProductCatalogProps> = ({ products, updateCart }) => {
+  const handleAddCart = () => {};
   const handleToggleFavorite = () => {
     alert("Изменено избранное");
   };
+  console.log("ProductCatalog");
   return (
-    <Row>
+    <Row direction="row">
       {products.map((product) => (
         <Product
+          key={product.id}
           product={product}
           onAddCart={handleAddCart}
+          updateCart={updateCart}
           onToggleFavorite={handleToggleFavorite}
         />
       ))}
